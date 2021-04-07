@@ -1,5 +1,4 @@
-# Voronoi-Clustering
-A simple approach of Voronoi Clustering
+# Voronoi-Clustering A simple Approach
  
 Data: You can input a 2d or 3d data. The parsing might need some changes, "it is on user's hand" :).
 
