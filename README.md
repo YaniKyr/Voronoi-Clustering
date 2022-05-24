@@ -1,7 +1,7 @@
 # Voronoi-Clustering A simple Approach
  
-Data: You can input a 2d or 3d data. The parsing might need some changes, "it is on user's hand" :).
+Data: You can input a 2d(x,y) or 3d(x,y,z) data only. The parsing might need some changes, "it is on user's hand".
 
-Algorithm: The Clustering was made with K-means and the bounding of the clusters with Jarvi's March algorithm
+Algorithm: The Clustering is made with K-means and the bounding of the clusters with Jarvi's March algorithm. Then the created graph, is saved in DCEL data structure(Doubly Connected Edge List).
 
-Note: This repo does not contain Fortune's Algorithm. That's why it is a simple approach :)
+Note: This repo does not contain Fortune's Algorithm. It is observation based solution.
