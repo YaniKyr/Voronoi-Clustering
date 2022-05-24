@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
 import K_means as km
 import D3ConvexHull as d3ch
 import time
@@ -31,13 +30,13 @@ _data =Mini_Parse("stars.txt")
 
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
-ax.set_facecolor("black")
+
 
 
 # We create an object of the Kmeans class and we put the data in it 
 kmeans = km.Kmeans(_data)
 #The input defines the number of centroids and it calculates them
-means = kmeans.CalculateMeans(35)
+means = kmeans.CalculateMeans(15)
 #Based on the means or centroids it creates the clusters
 clusters = kmeans.FindClusters()
     
@@ -58,7 +57,7 @@ for i in range(len(clusters)):
         # It plots the arrays inside these loop because after evey run
         # it clears its three arrays because we do not want to save 
         # all the points, but one cluster per loop.
-        ax.plot(hullx,hully,hullz,linewidth = 2,color = "white")
+        ax.plot(hullx,hully,hullz,linewidth = 7,color = "black")
         hullx.clear()
         hully.clear()
         hullz.clear()
@@ -72,11 +71,11 @@ means_z = [mean[2] for mean in means]
 cluster_x = [[clusters[i][j][0] for j in range(len(clusters[i]))] for i in range(len(clusters))]
 cluster_y = [[clusters[i][j][1] for j in range(len(clusters[i]))] for i in range(len(clusters))]
 cluster_z = [[clusters[i][j][2] for j in range(len(clusters[i]))] for i in range(len(clusters))]
-
+print("The Fail rate is : ",Failrate(clusters))
                 
         
 #for i in range(len (cluster_x)):
 #    ax.scatter(cluster_x[i],cluster_y[i],cluster_z[i])
 
-ax.scatter(means_x,means_y,means_z,color="black")
+ax.scatter(means_x,means_y,means_z,color="red")
 plt.show()
